@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>100GB MB ফ্রি অফার</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #050029;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            margin-top: 20px;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 10px;
+        }
+        h2 {
+            color: #333;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button {
+            width: 100%;
+            background-color: #28a745;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+        p {
+            color: green;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        .ad-container {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ✅ উপরের অ্যাড (Banner/Vignette) -->
+    <div class="ad-container" id="top-ad"></div>
+
+    <div class="container">
+        <h2>100GB MB ফ্রি অফার নিতে আপনার নাম্বার দিন</h2>
+        <input type="text" id="phone-number" placeholder="আপনার মোবাইল নম্বর লিখুন">
+        <button id="send-btn" disabled>সেন্ড করুন</button>
+        <p id="message"></p>
+    </div>
+
+    <!-- ✅ নিচের অ্যাড (Banner/Vignette) -->
+    <div class="ad-container" id="bottom-ad"></div>
+
+    <script>
+        // ✅ 10 সেকেন্ড পর বাটন এনাবল হবে
+        setTimeout(function() {
+            document.getElementById("send-btn").disabled = false;
+        }, 10000);
+
+        // ✅ বাটনে ক্লিক করলে Interstitial/Popunder অ্যাড দেখাবে
+        document.getElementById("send-btn").addEventListener("click", function() {
+            let phoneNumber = document.getElementById("phone-number").value;
+
+            if (phoneNumber.length < 10) {
+                alert("⚠️ দয়া করে একটি বৈধ মোবাইল নম্বর লিখুন!");
+                return;
+            }
+
+            document.getElementById("message").innerText = "✅ আপনার অফার সফলভাবে প্রসেস করা হয়েছে!";
+            
+            // ✅ Interstitial/Popunder অ্যাড লোড
+            let popAd = document.createElement("script");
+            popAd.src = "https://groleegni.net/401/8870113";
+            popAd.async = true;
+            document.body.appendChild(popAd);
+        });
+
+        // ✅ উপরের এবং নিচের অ্যাড লোড
+        function loadAds() {
+            let topAd = document.createElement("script");
+            topAd.src = "https://gizokraijaw.net/401/8870102"; // ✅ Banner/Vignette অ্যাড
+            topAd.async = true;
+            document.getElementById("top-ad").appendChild(topAd);
+
+            let bottomAd = document.createElement("script");
+            bottomAd.src = "https://gizokraijaw.net/401/8870109"; // ✅ Banner/Vignette অ্যাড
+            bottomAd.async = true;
+            document.getElementById("bottom-ad").appendChild(bottomAd);
+        }
+
+        // ✅ পেজ লোড হলে অ্যাড লোড হবে
+        window.onload = loadAds;
+    </script>
+
+</body>
+</html>
