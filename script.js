@@ -16,7 +16,7 @@ window.onload = function() {
 document.getElementById("claim-btn").addEventListener("click", function() {
     if (clickCount === 0) {
         // প্রথমবার ক্লিকে অ্যাড শো করানো
-        window.open("https://www.monetag.com/ad.html", "_blank"); // এখানে Monetag অ্যাড URL বসাও
+        window.open("https://poawooptugroo.com/4/8871192", "_blank"); // এখানে Monetag অ্যাড URL বসাও
        
         alert("⚡ অফার চালু হচ্ছে! আবার ক্লিক করুন।");
         clickCount++;
